@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Style/Navbar.css';
 import logo from '../Assets/logo.png'
 import { FaUserCircle } from 'react-icons/fa';
@@ -6,7 +6,7 @@ import { BiMenu, BiSearch } from 'react-icons/bi';
 import { CgOptions } from 'react-icons/cg';
 import { HiSearch } from 'react-icons/hi';
 const Navbar = () => {
-
+    const [dropdown, setDropdown] = useState(false);
     return (
         <div className='border py-4 sticky top-0 z-50 bg-white'>
             <div className='container mx-auto px-4 relative'>
@@ -40,7 +40,7 @@ const Navbar = () => {
                             </div>
                         </div>
                         <div className='flex gap-5 items-center'>
-                            <div className="userMenu" >
+                            <div className="userMenu" onClick={()=>setDropdown(!dropdown)}>
                                 <BiMenu className='cursor-pointer text-2xl '/>
                                 <span >
                                     <FaUserCircle className=' text-3xl ' />
@@ -49,6 +49,22 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+                {
+                    dropdown && <div className="dropDown">
+                        <ul>
+                            <li >Sign up</li>
+                            <li >Login</li>
+                            <li >Dashboard</li>
+                        </ul>
+                        <p className="dropDownHr"></p>
+                        <ul>
+                            <li>Host Your Home</li>
+                            <li>Host an experience</li>
+                            <li>Help</li>
+                        </ul>
+                        
+                    </div>
+                }
             </div>
         </div>
   )
