@@ -1,0 +1,54 @@
+.userMenu{
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 1px solid #ddd;
+    padding: 7px 12px;
+    border-radius: 30px;
+    cursor: pointer;
+    gap: 5px;
+    transition: box-shadow 0.3s ease ;
+}
+.customNav li, .customNav   span{
+    color: #666;
+    font-size: 12px;
+}
+.customNav li::before{
+    content: "\2022";
+    color: #717171;
+    display: inline-block; 
+    width: 1px;
+    padding-right: 8px;
+}
+.searchContainer{
+    padding: 10px 18px;
+    border-radius: 35px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: box-shadow 0.3s ease ;
+    cursor: pointer;
+}
+.searchContainer:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.hr{
+    height: 100%;
+    width: 1px;
+    background-color: #dddddd;
+}
+.searchBtn{
+    background-color: #ff385c;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    font-size: 16px;
+    font-weight: 600;
+}

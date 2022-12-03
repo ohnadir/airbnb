@@ -1,12 +1,12 @@
-import logo from './logo.svg';
 import 'antd/dist/reset.css';
 import './App.css';
+import Navbar from './Component/Navbar';
 
 function App() {
   return (
     <div>
       <header className="">
-        <h1>Air bnb</h1>
+        <Navbar/>
       </header>
     </div>
   );
