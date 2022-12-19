@@ -7,6 +7,9 @@ import { GiIsland, GiCampingTent, GiGrandPiano,
     GiFishingBoat, GiMountainCave, GiForestCamp, GiCastle, GiPaperWindmill, GiTreehouse } from 'react-icons/gi'
 import { MdCabin, MdOutlineSurfing, MdSportsGolf, MdDownhillSkiing } from 'react-icons/md';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { Modal } from 'antd';
+import { RiCloseFill } from 'react-icons/ri';
+
 
 const Category = () => {
     const [keyword, setKeyword] = useState();
@@ -104,7 +107,56 @@ const Category = () => {
                 </div>
             </div>
         </div>
-        
+        {
+            open && <Modal
+            centered
+            open={open}
+            width={870}
+            closable={false}
+            footer={false}
+            className={{borderRadius:"30px"}}
+            bodyStyle={{margin:"0", border:"none", padding:0  }}
+          >
+            <div>
+                <div className='border-b-[1px]'>
+                    <div className='flex items-center px-5 py-5'>
+                        <RiCloseFill onClick={() => setOpen(false)} className='w-[30px] h-[30px]  rounded-full hover:bg-gray-100 p-1 cursor-pointer'/>
+                        <p className='m-0 mx-auto font-bold text-[18px] '>Filters</p>
+                    </div>
+                </div>
+                <div className='px-5 mt-10'>
+                    <p className="pHeading">Price range</p>
+                    <div className="divider">
+                        <p className=''></p>
+                    </div>
+                    <div className='grid lg:grid-cols-2 gap-5 mt-[25px]'>
+                        <div>
+                            <h1 className="heading">Booking Protection Guarantee</h1>
+                            <p className="pHeading">In the unlikely event a Host needs to cancel your booking within 30 days of check-in, we’ll find you a similar or better home, or we’ll refund you.</p>
+                        </div>
+                        <div>
+                            <h1 className="heading">Check-In Guarantee</h1>
+                            <p className="pHeading">If you can’t check into your home and the Host cannot resolve the issue, 
+                                we’ll find you a similar or better home for the length of your original stay, or we’ll refund you.
+                            </p>
+                        </div>
+                        <div>
+                            <h1 className="heading">Get-What-You-Booked Guarantee</h1>
+                            <p className="pHeading">If at any time during your stay you find your listing isn't as advertised—for example, 
+                                the refrigerator stops working and your Host can’t easily fix it, or it has fewer bedrooms than listed—you'll have 
+                                three days to report it and we’ll find you a similar or better home, or we’ll refund you.
+                            </p>
+                        </div>
+                        <div>
+                            <h1 className="heading">24-hour Safety Line</h1>
+                            <p className="pHeading">If you ever feel unsafe, you’ll get priority access to specially-trained safety agents, day or night.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+          </Modal>
+        }
     </div>
   )
 }
