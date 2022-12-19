@@ -1,0 +1,55 @@
+.footerList {
+}
+.footerList li::before{
+}
+.footerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 15px 0;
+    
+}
+.footerContainer p{
+    margin-bottom: 0;
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.support{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.arrowIcon{
+    font-size: 20px;
+    font-weight: 600;
+}
+.sharedFooter ul{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    position: relative;
+    gap: 25px;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 2em;
+    text-indent: -1em;
+}
+.sharedFooter li{
+    padding: 0 10px;
+}
+.sharedFooter li:before{
+    content: ".";
+    top: -4px;
+    margin-left: -15px;
+    position: absolute;
+    display: block;
+
+} 
