@@ -5,6 +5,7 @@ import {TbPool, TbBeach, TbToolsKitchen } from 'react-icons/tb'
 import { GiIsland, GiCampingTent, GiGrandPiano, 
     GiFishingBoat, GiMountainCave, GiForestCamp, GiCastle, GiPaperWindmill, GiTreehouse } from 'react-icons/gi'
 import { MdCabin, MdOutlineSurfing, MdSportsGolf, MdDownhillSkiing } from 'react-icons/md';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 const Category = () => {
     const [keyword, setKeyword] = useState();
@@ -26,12 +27,56 @@ const Category = () => {
         { id: 15, name: "Golf", icon: <MdSportsGolf /> },
         { id: 16, name: "Ski-in/out", icon: <MdDownhillSkiing />}
     ];
+    const ArrowLeft = (props) => (
+        <button
+            {...props}
+            style={{visibility:props?.currentSlide === 5 ? "hidden" : "visible"}}
+            className="prev">
+            <BiChevronLeft/>
+        </button>
+    );
+    const ArrowRight = (props) => (
+        <button
+            {...props}
+            style={{visibility:props?.currentSlide === 5 ? "hidden" : "visible"}}
+            className="next">
+            <BiChevronRight/>
+        </button>
+    );
     const settings = {
         dots: false,
         arrows: true,
+        prevArrow: <ArrowLeft />,
+        nextArrow: <ArrowRight />,
         slidesToShow: 10,
         slidesToScroll: 10,
-        initialSlide: 0
+        initialSlide: 0,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 6,
+                slidesToScroll: 6,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            }
+        ]
     }
   return (
     <div>
