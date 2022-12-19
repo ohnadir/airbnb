@@ -1,0 +1,41 @@
+.iconContainer{
+    color: #838383;
+    cursor: pointer;
+    padding-bottom: 8px;
+    width: fit-content;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+  }
+  .iconContainer:hover{
+    color: black;
+    width: fit-content;
+    border-bottom: 2px solid #838383;
+  }
+  .prev, .next{
+    top: 25%;
+    height: 26px;
+    width: 26px;
+    padding: 0 3px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    font-size: 20px;
+    position: absolute;
+    z-index: 1;
+    border: 1px solid #b3b3b3;
+    transition: all 0.2s ease;
+  }
+  .prev{
+    float: left;
+    left: -32px;
+  }
+  .prev:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .next{
+    float: right;
+    right: -32px;
+  }
+  .next:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
